@@ -5,6 +5,7 @@ import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.config.IniSecurityManagerFactory;
 import org.apache.shiro.subject.Subject;
+import org.apache.shiro.web.filter.mgt.DefaultFilter;
 
 public class ServiceGateway {
     static {
@@ -13,6 +14,7 @@ public class ServiceGateway {
 
     }
     public static void handleRequest(){
+        //DefaultFilter.anon.
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken("root", "saeid");
 
